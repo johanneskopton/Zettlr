@@ -18,15 +18,31 @@
 
 // Cursor blink animation
 @keyframes soft-blink {
-  0%   { opacity: 1; }
-  40%  { opacity: 1; }
-  55%  { opacity: 0; }
-  85%  { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0;
+  }
+
+  85% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 // Use the default mouse cursor on the vertical scrollbar
-.CodeMirror-vscrollbar { cursor: default; }
+.CodeMirror-vscrollbar {
+  cursor: default;
+}
 
 .CodeMirror {
   font-size: 1em;
@@ -42,8 +58,9 @@
   // hidden. This way, pop-ups for non-western
   // fonts such as Hiragana/Katakana are correctly
   // aligned. Should also help accessibility-plugins.
-  &.CodeMirror-wrap > div:first-child {
+  &.CodeMirror-wrap>div:first-child {
     margin-top: 0.4375em;
+
     textarea {
       font-family: inherit;
       font-size: inherit;
@@ -55,7 +72,9 @@
   // This directive prevents strange colour artifacts when a document is open
   // that has less lines of code than fit into the window (especially notable
   // in dark mode, as the sizer is visible with a small green halo).
-  .CodeMirror-sizer { height: 100%; }
+  .CodeMirror-sizer {
+    height: 100%;
+  }
 
   &.CodeMirror-empty {
     background-position: center center;
@@ -82,7 +101,8 @@
 
   /* Implement a "fat" cursor for Windows' overwrite mode (Ins key) */
   // Also valid for vim and everything that needs a block cursor.
-  .CodeMirror-overwrite .CodeMirror-cursor, &.cm-fat-cursor .CodeMirror-cursor {
+  .CodeMirror-overwrite .CodeMirror-cursor,
+  &.cm-fat-cursor .CodeMirror-cursor {
     width: auto;
     border-top: 2px solid #333;
     border-bottom: 2px solid #333;
@@ -98,7 +118,8 @@
 
   // This class is applied for the dialogs that the vim plugin produces, i.e.
   // the command bar.
-  .CodeMirror-dialog.CodeMirror-dialog-bottom, .vim-error-message {
+  .CodeMirror-dialog.CodeMirror-dialog-bottom,
+  .vim-error-message {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -114,7 +135,9 @@
   // SYNTAX-HIGHLIGHTING CLASSES
   // ===========================================================================
 
-  pre { padding: 0; }
+  pre {
+    padding: 0;
+  }
 
   input[type="checkbox"] {
     transform: scale(1.2);
@@ -128,8 +151,14 @@
     font-weight: bold;
   }
 
-  .cm-tab { display: inline; }
-  .cm-url, .cm-link { text-decoration: none; }
+  .cm-tab {
+    display: inline;
+  }
+
+  .cm-url,
+  .cm-link {
+    text-decoration: none;
+  }
 
   // Make the formatting characters and escape sequences nearly invisible
   .cm-formatting-code,
@@ -145,8 +174,7 @@
   // A few elements always need to be displayed monospaced
   .cm-comment,
   .cm-fenced-code,
-  .cm-table
-  .cm-formatting-task,
+  .cm-table .cm-formatting-task,
   .cm-formatting-quote,
   .cm-formatting-list-ul,
   .cm-formatting-list-ol {
@@ -170,7 +198,7 @@
     cursor: pointer;
     border-radius: 3px;
     padding: 0 4px;
-  
+
     span {
       font-size: 20px;
       font-weight: normal;
@@ -180,29 +208,55 @@
   // These classes are being applied by the heading-classes hook
   .size-header-1 {
     font-size: 2em;
-    .CodeMirror-gutter-elt { line-height: 1.5em; }
+
+    .CodeMirror-gutter-elt {
+      line-height: 1.5em;
+    }
   }
+
   .size-header-2 {
     font-size: 1.8em;
-    .CodeMirror-gutter-elt { line-height: 1.5em; }
+
+    .CodeMirror-gutter-elt {
+      line-height: 1.5em;
+    }
   }
+
   .size-header-3 {
     font-size: 1.5em;
-    .CodeMirror-gutter-elt { line-height: 1.4em; }
+
+    .CodeMirror-gutter-elt {
+      line-height: 1.4em;
+    }
   }
+
   .size-header-4 {
     font-size: 1.3em;
-    .CodeMirror-gutter-elt { line-height: 1.3em; }
+
+    .CodeMirror-gutter-elt {
+      line-height: 1.3em;
+    }
   }
-  .size-header-5 { font-size: 1em; }
-  .size-header-6 { font-size: 1em; }
+
+  .size-header-5 {
+    font-size: 1em;
+  }
+
+  .size-header-6 {
+    font-size: 1em;
+  }
 
   // The underlying gfm mode is funny. For top level task items, it applies the
   // class cm-variable-2 for the full text. For second-level task items, it
   // applies cm-variable-3, and for the third level it applies cm-keyword. And
   // then it toggles around. Why would you do that ...?
   .task-item-done {
-    .cm-variable-2, .cm-variable-3, .cm-keyword { text-decoration: line-through !important; }
+
+    .cm-variable-2,
+    .cm-variable-3,
+    .cm-keyword {
+      text-decoration: line-through !important;
+    }
   }
 
   // Deliver a much more fancy UX for images inserted into the editor
@@ -218,13 +272,19 @@
         display: inherit;
       }
 
-      &:hover, &:focus-within {
-        figcaption, span.image-size-info, span.open-externally-button {
+      &:hover,
+      &:focus-within {
+
+        figcaption,
+        span.image-size-info,
+        span.open-externally-button {
           opacity: 1;
         }
       }
 
-      span.image-size-info, figcaption, span.open-externally-button {
+      span.image-size-info,
+      figcaption,
+      span.open-externally-button {
         position: absolute;
         opacity: 0;
         transition: 0.2s opacity ease;
@@ -293,7 +353,8 @@
   }
 
   #measureMonoWidth {
-    font-family: Consolas, 'Inconsolata', Menlo, monospace;;
+    font-family: Consolas, 'Inconsolata', Menlo, monospace;
+    ;
     position: absolute;
     visibility: hidden;
     height: auto;
@@ -305,7 +366,9 @@
 // Hacky theming to remove the padding from the tippy since we don't want that
 // See: https://atomiks.github.io/tippyjs/v6/themes/
 body .tippy-box[data-theme~='no-padding'] {
-  .tippy-content { padding: 0; }
+  .tippy-content {
+    padding: 0;
+  }
 }
 
 body .tippy-content {
@@ -332,7 +395,10 @@ body .tippy-content {
       }
 
       transition: 0.3s all ease;
-      &:hover { background-color: rgb(120, 120, 120); }
+
+      &:hover {
+        background-color: rgb(120, 120, 120);
+      }
     }
   }
 
@@ -348,6 +414,7 @@ body .tippy-content {
   }
 
   .editor-note-preview {
+
     // Style the little preview note tooltips better
     h4.filename {
       font-size: 120%; // Not that much larger than the rest of the text
@@ -382,23 +449,34 @@ body.dark .tippy-content .editor-fn-textarea {
   background-color: white;
   border: none;
 }
+
 .CodeMirror-foldgutter {
   width: 20px;
 }
+
 .CodeMirror-linenumbers {
   width: 40px;
   border-right: 1px solid rgba(0, 0, 0, 0.25);
 }
-.CodeMirror-foldgutter-open, .CodeMirror-foldgutter-folded {
+
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded {
   text-align: right;
   cursor: pointer;
   font-size: 18px;
 
-  &:hover { color: var(--c-primary); }
+  &:hover {
+    color: var(--c-primary);
+  }
 }
 
-.CodeMirror-foldgutter-open:after { content: "\25BE"; }
-.CodeMirror-foldgutter-folded:after { content: "\25B8"; }
+.CodeMirror-foldgutter-open:after {
+  content: "\25BE";
+}
+
+.CodeMirror-foldgutter-folded:after {
+  content: "\25B8";
+}
 
 .CodeMirror-foldmarker {
   border-radius: 3px;
@@ -408,6 +486,7 @@ body.dark .tippy-content .editor-fn-textarea {
   cursor: pointer;
   vertical-align: baseline;
 }
+
 // END text-folding
 
 // Hints (tag autocompletion, etc.)
@@ -433,5 +512,11 @@ body.dark .tippy-content .editor-fn-textarea {
   }
 
   // Apply a bolder font weight to tags that have a specific colour assigned.
-  .cm-hint-colour { font-weight: bold; }
+  .cm-hint-colour {
+    font-weight: bold;
+  }
+}
+
+.chessboard {
+  width: 300px;
 }
